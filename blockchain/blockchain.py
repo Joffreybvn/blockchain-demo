@@ -8,10 +8,20 @@ from time import time
 
 
 class BlockChain(object):
+    """
+    Create a new BlockChain class. A BlockChain contains a chain of blocks, as
+    wll as the methods to add new blocks.
+    """
 
     def __init__(self):
         self.chain = []
         self.pending_transactions = []
+
+        # Create initial block
+        self.new_block(
+            previous_hash="Hello World !",
+            proof=100
+        )
 
     def new_block(self, proof, previous_hash=None):
         """
